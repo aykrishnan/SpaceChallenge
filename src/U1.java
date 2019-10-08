@@ -9,10 +9,12 @@ public class U1 extends Rocket {
          landCrash = 1-(0.01*(currentCargo/maxCargo));
 
     }
+    
+    // Why are these methods returning a boolean if they're setting an internal property anyway?
     public boolean land(int cargo){
         int success = (int)(Math.random()*landCrash*10);
         if(success>=1){
-            rocketStatus = "landed";
+            rocketStatus = "landed";  // Consider using an enum instead
             return true;
         }
         else{

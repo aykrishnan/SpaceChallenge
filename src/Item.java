@@ -1,7 +1,11 @@
 public class Item {
+    
+    // Recommendation: Make these parameters private and access them via getter methods
     String name;
     int weight;
-   public Item(){
+    
+    // You can remove this consructor - it exists by default
+    public Item(){
 
     }
     public Item(String name,int weight){

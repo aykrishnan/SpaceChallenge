@@ -1,4 +1,6 @@
 public class Rocket implements SpaceShip {
+    
+    // Recommendation: Make these values private and access them via getter methods
     int cost;
     int weight;
     int maxWeight;
@@ -26,6 +28,12 @@ public class Rocket implements SpaceShip {
     public boolean land() {
         return true;
     }
+    
+    /* You can simplify this entire method to:
+      public boolean canCarry(Item cargo) {
+        return (cargo.weight <= (maxCargo - currentCargo));
+      }
+    */
     public boolean canCarry(Item cargo){
         if(cargo.weight<= (maxCargo-currentCargo)){
             return true;
@@ -34,6 +42,8 @@ public class Rocket implements SpaceShip {
             return false;
         }
     }
+    
+    // Methods should be lowercase
     public void Carry(Item cargo){
         currentCargo += cargo.weight;
     }
